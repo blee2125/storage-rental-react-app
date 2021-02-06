@@ -1,8 +1,15 @@
 import React from 'react'
 
+//import {rentStorageUnit} from '../actions/rentStorageUnit'
+//import {connect} from 'react-redux'
+
 class RentalForm extends React.Component{
 
-    state= {unit_number: '', customer: '', comments: ''}
+    state= {
+        unit_number: '',
+        customer: '',
+        comments: ''
+    }
 
     handleChange = (event) => {
         this.setState({
@@ -12,7 +19,7 @@ class RentalForm extends React.Component{
 
     handleSubmit = (event) => {
         event.preventDefault()
-        this.props.rentUnit(this.state)
+        this.props.rentStorageUnit(this.state)
         this.setState({unit_number: '', customer: '', comments: ''})
     }
 
@@ -20,15 +27,18 @@ class RentalForm extends React.Component{
         return(
             <div>
                 <form className='RentalForm' onSubmit={this.handleSubmit}>
-                    Rental Form
+                    Rental Form<br/>
                     <label> Unit Number: </label>
                     <input type='text' value={this.state.name} name='unit_number' onChange={this.handleChange} />
                     <label> Customer: </label>
                     <input type='text' value={this.state.name} name='customer' onChange={this.handleChange} />
                     <label> Comments: </label>
                     <input type='text' value={this.state.name} name='comments' onChange={this.handleChange} />
+                    <input type='submit' />
                 </form>
             </div>
         )
     }
 }
+
+export default (RentalForm)
