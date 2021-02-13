@@ -1,15 +1,21 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import {addStorageUnit} from '../actions/addStorageUnit'
 
 class NewRentalUnit extends React.Component{
 
-    state= {
-        unit_number: '',
-        
+    constructor(){
+        super()
+        this.state= {
+            unit_number: '',
+            available: true
+        }
     }
+
 
     handleChange = (event) => {
         this.setState({
-            [event.target.name]: event.target.value
+            unit_number: event.target.value
         })
     }
 
@@ -33,4 +39,4 @@ class NewRentalUnit extends React.Component{
     }
 }
 
-export default (NewRentalUnit)
+export default connect(null, {addStorageUnit})(NewRentalUnit)
