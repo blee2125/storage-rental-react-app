@@ -2,6 +2,8 @@ import './App.css';
 import NavBar from '../src/components/NavBar'
 import StorageUnitsContainer from '../src/containers/StorageUnitsContainer'
 
+import {connect} from 'react-redux'
+
 function App() {
   return (
     <div className="App">
@@ -12,4 +14,4 @@ function App() {
   );
 }
 
-export default App;
+export default connect()(App);
