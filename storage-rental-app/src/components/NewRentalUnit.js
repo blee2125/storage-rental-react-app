@@ -31,7 +31,7 @@ class NewRentalUnit extends React.Component{
                 <form className='NewStorageUnit' onSubmit={this.handleSubmit}>
                     Add New Storage Unit<br/>
                     <label> Unit Number: </label>
-                    <input type='text' value={this.state.name} name='unit_number' onChange={this.handleChange} />
+                    <input type='text' value={this.state.unit_number} name='unit_number' onChange={this.handleChange} />
                     <input type='submit' />
                 </form>
             </div>
