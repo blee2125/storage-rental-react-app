@@ -4,6 +4,11 @@ export default function unitReducer(state = {units: []}, action){
         case 'FETCH_UNITS':
             //console.log('fetch units')
             return {units: action.payload}
+
+        case 'FETCH_FORMS':
+            //console.log('fetch forms')
+            return {forms: action.payload}
+            
         case 'ADD_UNIT':
             //console.log('add unit')
             return {...state, units: [...state.units, action.payload]}
