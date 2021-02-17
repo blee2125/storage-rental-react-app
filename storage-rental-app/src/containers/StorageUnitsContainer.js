@@ -6,21 +6,24 @@ import {connect} from 'react-redux'
 import RentalForm from '../components/RentalForm'
 import RentalUnits from '../components/RentalUnits'
 import NewRentalUnit from '../components/NewRentalUnit'
+import {fetchRentalForms} from '../actions/fetchRentalForms'
+import RentalFormsContainer from './RentalFormsContainer'
+
 
 class StorageUnitsContainer extends React.Component{
 
     componentDidMount(){
-        this.props.fetchStorageUnits()
+        this.props.fetchStorageUnits();
+        this.props.fetchRentalForms();
     }
 
     render(){
         return(
             <div>
-                storage units container
                 <Switch>
-                <Route path='/rentalunits' component={RentalUnits} />
+                <Route path='/rentalunits' render={() => <RentalUnits data={this.props} />} />
                 <Route path='/addrentalunit' component={NewRentalUnit} />
-                <Route path='/rentalform' component={RentalForm} />                    
+                <Route path='/rentalform' render={() => <RentalFormsContainer data={this.props} />}/>                    
                 </Switch>
             </div>
         )
@@ -30,8 +33,9 @@ class StorageUnitsContainer extends React.Component{
 
 const mapStateToProps = (state) => {
     return{
-        storageUnits: state.units
+        storageUnits: state.units,
+        rentalForms: state.forms
     }
 }
 
-export default connect(mapStateToProps, {fetchStorageUnits}) (StorageUnitsContainer)
+export default connect(mapStateToProps, {fetchRentalForms, fetchStorageUnits}) (StorageUnitsContainer)
