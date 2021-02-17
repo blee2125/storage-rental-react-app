@@ -11,6 +11,8 @@ import {compose} from 'redux'
 import {Provider} from 'react-redux'
 import thunk from 'redux-thunk'
 import unitReducer from '../src/reducers/unitReducer'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const composeEnhancers= window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
