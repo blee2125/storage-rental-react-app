@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import {rentStorageUnit} from '../actions/rentStorageUnit'
+import RentalFormsContainer from '../containers/RentalFormsContainer'
 
 class RentalForm extends React.Component{
     
@@ -10,7 +11,8 @@ class RentalForm extends React.Component{
         this.state= {
             unit_number: '',
             customer: '',
-            comments: ''
+            comments: '',
+            unit_id: ''
         }
     }
 
@@ -22,6 +24,7 @@ class RentalForm extends React.Component{
 
     handleSubmit = (event) => {
         event.preventDefault()
+        this.state.unit_id = this.state.unit_number
         this.props.rentStorageUnit(this.state)
         this.setState({unit_number: '', customer: '', comments: ''})
     }
@@ -39,6 +42,9 @@ class RentalForm extends React.Component{
                     <input type='text' value={this.state.comments} name='comments' onChange={this.handleChange} />
                     <input type='submit' />
                 </form>
+                <div>
+                    <RentalFormsContainer />
+                </div>
             </div>
         )
     }
