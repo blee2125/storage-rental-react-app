@@ -1,13 +1,13 @@
-export default function unitReducer(state = {units: []}, action){
+export default function unitReducer(state = {units: [], forms: []}, action){
 //console.log(action)
     switch (action.type){
         case 'FETCH_UNITS':
             //console.log('fetch units')
-            return {units: action.payload}
+            return {...state, units: action.payload}
 
         case 'FETCH_FORMS':
             //console.log('fetch forms')
-            return {forms: action.payload}
+            return {...state, forms: action.payload}
             
         case 'ADD_UNIT':
             //console.log('add unit')
