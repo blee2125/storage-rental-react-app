@@ -10,9 +10,18 @@ const StorageUnit = (props) => {
         props.deleteStorageUnit(storageUnit.text.id)
     }
 
+    const renderAvailable = () => {
+        if (props.text.available == true) {
+            return "yes"
+        } else {
+            return "no"
+        }
+    }
+
     return(
         <div>
-            <ul>Unit Number: {props.text.unit_number}</ul><button onClick={()=> handleDelete(props)}>delete</button>
+            <p>Unit Number: {props.text.unit_number} - Available: {renderAvailable()}</p>
+            <button onClick={()=> handleDelete(props)}>delete</button>
         </div>
     )
 }
