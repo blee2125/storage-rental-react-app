@@ -7,6 +7,6 @@ export const updateStorageUnit = (data) => {
         body: JSON.stringify(data)
         })
         .then(resp => resp.json())
-        .then(unit => dispatch({type: 'RENT_UNIT', payload: unit}))
+        .then(unit => dispatch({type: 'UPDATE_UNIT', payload: unit}))
     }
 }
