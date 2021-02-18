@@ -16,9 +16,23 @@ class RentalFormsContainer extends React.Component{
         return(
             <div>
                 rental form container
-                {console.log(this.props)}
+                
                 <RentalForm data={this.props} />
+
+                <table>
+                <thead>
+                <tr>
+                    <th>unit_number</th>
+                    <th>customer</th>
+                    <th>comment</th>
+                    <th>created_at</th>
+                </tr>
+                </thead>
+                <tbody>
                 {this.renderDisplayRentalForm(this.props.data.rentalForms)}
+                </tbody>
+            </table>
+
             </div>
         )
     }
