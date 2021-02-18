@@ -1,16 +1,18 @@
 import React from 'react'
-import { connect } from 'react-redux'
-
 
 const DisplayRentalForm = (props) => {
     
-    console.log(props)
+    //console.log(props)
 
     return(
-        <div>
-            <p>display rental</p>
-            
-        </div>
+
+                <tr>
+                    <td>{props.text.unit_number}</td>
+                    <td>{props.text.customer}</td>
+                    <td>{props.text.comments}</td>
+                    <td>{props.text.created_at}</td>
+                </tr>
+        
     )
 }
 
