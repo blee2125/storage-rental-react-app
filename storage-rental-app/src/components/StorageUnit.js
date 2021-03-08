@@ -3,27 +3,41 @@ import { connect } from 'react-redux'
 
 import {deleteStorageUnit} from '../actions/deleteStorageUnit'
 
-const StorageUnit = (props) => {
+class StorageUnit extends React.Component {
     
-    const handleDelete = (storageUnit) => {
+    handleDelete = (storageUnit) => {
         //console.log(storageUnit.text.unit_number)
-        props.deleteStorageUnit(storageUnit.text.id)
+        this.props.deleteStorageUnit(storageUnit.text.id)
     }
 
-    const renderAvailable = () => {
-        if (props.text.available == true) {
+    renderAvailable = () => {
+        if (this.props.text.available == true) {
             return "yes"
         } else {
             return "no"
         }
+    } // - Available: {renderAvailable()}
+
+    state={
+        currentCount: 0,
+        something: 'yes'
     }
 
-    return(
+    addLike = (currentCount) =>{
+        console.log(currentCount)
+        currentCount ++
+        this.setState({currentCount: currentCount})
+    }
+
+    render(){
+        return(
         <div>
-            <p>Unit Number: {props.text.unit_number} - Available: {renderAvailable()}</p>
-            <button onClick={()=> handleDelete(props)}>delete</button>
+            <p>Unit Number: {this.props.text.unit_number} - <button onClick={()=> this.handleDelete(this.props)}>delete</button>
+            <button onClick={()=> this.addLike(this.state.currentCount)}>like</button>{this.state.currentCount}</p>
+            
         </div>
-    )
+        )
+    }
 }
 
 export default connect(null, {deleteStorageUnit})(StorageUnit)
