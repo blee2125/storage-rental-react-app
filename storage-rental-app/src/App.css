@@ -7,6 +7,12 @@
   pointer-events: none;
 }
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
