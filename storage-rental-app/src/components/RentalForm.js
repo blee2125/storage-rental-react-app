@@ -28,7 +28,6 @@ class RentalForm extends React.Component{
         this.props.rentStorageUnit(this.state)
         this.setState({unit_number: '', customer: '', comments: ''})
         this.props.fetchRentalForms()
-
     }
 
     render(){
@@ -50,5 +49,3 @@ class RentalForm extends React.Component{
 }
 
 export default connect(null, {rentStorageUnit, fetchRentalForms})(RentalForm)
-
-
