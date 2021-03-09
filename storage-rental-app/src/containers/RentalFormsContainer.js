@@ -4,9 +4,7 @@ import RentalForm from '../components/RentalForm'
 
 class RentalFormsContainer extends React.Component{
 
-
     renderDisplayRentalForm = (forms) => forms.map((form, id) => <DisplayRentalForm key={id} text={form} />)
-
 
     render(){
         return(
