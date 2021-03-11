@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 import {deleteStorageUnit} from '../actions/deleteStorageUnit'
 import {likeStorageUnit} from '../actions/likeStorageUnit'
+import {updateStorageUnit} from '../actions/updateStorageUnit'
 
 class StorageUnit extends React.Component {
     
@@ -10,7 +11,8 @@ class StorageUnit extends React.Component {
         super(props)
         this.state = {
             id: props.data.id,
-            likes: props.data.likes
+            likes: props.data.likes,
+            available: props.data.available
         }
     }
 
@@ -20,7 +22,7 @@ class StorageUnit extends React.Component {
     }
 
     renderAvailable = () => {
-        if (this.props.text.available == true) {
+        if (this.props.data.available == true) {
             return "yes"
         } else {
             return "no"
@@ -34,15 +36,24 @@ class StorageUnit extends React.Component {
         this.setState({likes: newlikes}, () => this.props.likeStorageUnit(this.state))
     }
 
+    toggleAvailable = (available) =>{
+        if (available === true) {
+            this.setState({available: false}, () => this.props.updateStorageUnit(this.state))
+        } else {
+            this.setState({available: true}, () => this.props.updateStorageUnit(this.state))
+        }
+    }
+
     render(){
         return(
         <div>
             <p>Unit Number: {this.props.data.unit_number} - <button onClick={()=> this.handleDelete(this.props)}>delete</button>
-            <button onClick={()=> this.addLike(this.props.data.likes)}>like</button> Likes: {this.props.data.likes}</p>
+            <button onClick={()=> this.addLike(this.props.data.likes)}>like</button> Likes: {this.props.data.likes}
+            <button onClick={()=> this.toggleAvailable(this.props.data.available)}>toggle available</button> - Available: {this.renderAvailable()}</p>
             
         </div>
         )
     }
 }
 
-export default connect(null, {deleteStorageUnit, likeStorageUnit})(StorageUnit)
+export default connect(null, {deleteStorageUnit, updateStorageUnit, likeStorageUnit})(StorageUnit)
