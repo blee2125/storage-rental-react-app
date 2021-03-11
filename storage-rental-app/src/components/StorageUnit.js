@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import {deleteStorageUnit} from '../actions/deleteStorageUnit'
 import {likeStorageUnit} from '../actions/likeStorageUnit'
 import {updateStorageUnit} from '../actions/updateStorageUnit'
+import Button from 'react-bootstrap/Button'
 
 class StorageUnit extends React.Component {
     
@@ -23,9 +24,9 @@ class StorageUnit extends React.Component {
 
     renderAvailable = () => {
         if (this.props.data.available == true) {
-            return "yes"
+            return <Button variant="success">yes</Button>
         } else {
-            return "no"
+            return <Button variant="danger">no</Button>
         }
     } // - Available: {renderAvailable()}
 
@@ -48,8 +49,8 @@ class StorageUnit extends React.Component {
         return(
         <div>
             <p>Unit Number: {this.props.data.unit_number} - <button onClick={()=> this.handleDelete(this.props)}>delete</button>
-            <button onClick={()=> this.addLike(this.props.data.likes)}>like</button> Likes: {this.props.data.likes}
-            <button onClick={()=> this.toggleAvailable(this.props.data.available)}>toggle available</button> - Available: {this.renderAvailable()}</p>
+            <button onClick={()=> this.addLike(this.props.data.likes)}>like</button>
+            <button onClick={()=> this.toggleAvailable(this.props.data.available)}>toggle available</button> Likes: {this.props.data.likes} - Available: {this.renderAvailable()}</p>
             
         </div>
         )
