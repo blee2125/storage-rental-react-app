@@ -1,7 +1,7 @@
 export const updateStorageUnit = (data) => {
 
     return(dispatch) => {
-        fetch(`http://localhost:3000/units/${id}`,
+        fetch(`http://localhost:3000/units/${data.id}`,
         {method: 'PATCH',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(data)
