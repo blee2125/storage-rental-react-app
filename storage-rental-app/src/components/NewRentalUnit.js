@@ -8,7 +8,8 @@ class NewRentalUnit extends React.Component{
         super()
         this.state= {
             unit_number: '',
-            available: true
+            available: true,
+            likes: 0
         }
     }
 
