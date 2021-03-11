@@ -21,7 +21,6 @@ export default function unitReducer(state = {units: [], forms: []}, action){
             return {...state, forms: [...state.forms, action.payload]}
 
         case 'ADD_LIKE':
-            console.log(action.payload)
             let likedUnitArray = state.units.map(unit=>{
                 if(unit.id === action.payload.id) {
                     return action.payload
@@ -29,8 +28,17 @@ export default function unitReducer(state = {units: [], forms: []}, action){
                     return unit
                 }
             })
-            console.log(action.payload)
             return {...state, units: likedUnitArray}
+
+        case 'UPDATE_UNIT':
+            let updatedUnitArray = state.units.map(unit=>{
+                if(unit.id === action.payload.id){
+                    return action.payload
+                } else {
+                    return unit
+                }
+            })
+            return {...state, units: updatedUnitArray}
 
         default:
             //console.log('default')
