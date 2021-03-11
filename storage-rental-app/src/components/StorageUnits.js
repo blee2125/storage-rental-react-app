@@ -1,7 +1,7 @@
 import React from 'react'
 import StorageUnit from '../components/StorageUnit'
 
-class RentalUnits extends React.Component{
+class StorageUnits extends React.Component{
 
     state={
         unitArray: this.props.data.storageUnits
@@ -12,9 +12,8 @@ class RentalUnits extends React.Component{
         this.setState({unitArray: this.props.data.storageUnits})
     }
     
-    renderStorageUnits = (something) => something.map((unit, id) => <StorageUnit key={id} text={unit} />)
+    renderStorageUnits = (units) => units.map((unit, id) => <StorageUnit key={id} data={unit} />)
 
-    //sorts
     sortAbc = () => {
         const {unitArray} = this.state
         let sortUnits = unitArray.sort(function(a,b){
@@ -35,4 +34,4 @@ class RentalUnits extends React.Component{
     }
 }
 
-export default (RentalUnits)
+export default (StorageUnits)
