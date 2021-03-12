@@ -5,6 +5,7 @@ import {deleteStorageUnit} from '../actions/deleteStorageUnit'
 import {likeStorageUnit} from '../actions/likeStorageUnit'
 import {updateStorageUnit} from '../actions/updateStorageUnit'
 import Button from 'react-bootstrap/Button'
+import ButtonGroup from 'react-bootstrap/ButtonGroup'
 
 class StorageUnit extends React.Component {
     
@@ -48,9 +49,13 @@ class StorageUnit extends React.Component {
     render(){
         return(
         <div>
-            <p>Unit Number: {this.props.data.unit_number} - <button onClick={()=> this.handleDelete(this.props)}>delete</button>
-            <button onClick={()=> this.addLike(this.props.data.likes)}>like</button>
-            <button onClick={()=> this.toggleAvailable(this.props.data.available)}>toggle available</button> Likes: {this.props.data.likes} - Available: {this.renderAvailable()}</p>
+            <p>Unit Number: {this.props.data.unit_number} - 
+            <ButtonGroup >
+                <Button onClick={()=> this.handleDelete(this.props)}>delete</Button>
+                <Button onClick={()=> this.addLike(this.props.data.likes)}>like</Button>
+                <Button onClick={()=> this.toggleAvailable(this.props.data.available)}>toggle available</Button>
+            </ButtonGroup>
+             Likes: {this.props.data.likes} - Available: {this.renderAvailable()}</p>
             
         </div>
         )
