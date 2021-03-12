@@ -7,7 +7,7 @@ import {connect} from 'react-redux'
 function App() {
   return (
     <div className="App">
-      
+      <style>{'body { background-color: lightsteelblue; }'}</style>
       <NavBar />
       <StorageUnitsContainer />
     </div>
