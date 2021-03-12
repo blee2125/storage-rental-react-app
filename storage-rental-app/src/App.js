@@ -7,7 +7,7 @@ import {connect} from 'react-redux'
 function App() {
   return (
     <div className="App">
-      <h1>Storage Units Manager</h1>
+      
       <NavBar />
       <StorageUnitsContainer />
     </div>
