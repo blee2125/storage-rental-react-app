@@ -9,7 +9,6 @@ class StorageUnits extends React.Component{
     }
 
     componentDidMount(){
-        //console.log('rental units component did mount')
         this.setState({unitArray: this.props.data.storageUnits})
     }
     
@@ -22,6 +21,10 @@ class StorageUnits extends React.Component{
         })
         this.setState({unitArray: sortUnits})
     }
+
+    sortedByLikes = this.props.data.storageUnits.sort(function(a,b){
+        return b.likes - a.likes
+    })
 
     render(){
         return(
