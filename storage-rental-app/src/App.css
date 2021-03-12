@@ -1,3 +1,7 @@
+a{
+  color: lightskyblue;
+}
+
 .App {
   text-align: center;
 }
@@ -5,6 +9,16 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+Button.btn.btn-primary {
+  color: lightskyblue;
+  background-color: gray;
+  border-color: gray;
+}
+
+li {
+  padding: 9px;
 }
 
 table {
