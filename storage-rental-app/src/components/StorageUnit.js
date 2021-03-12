@@ -19,7 +19,6 @@ class StorageUnit extends React.Component {
     }
 
     handleDelete = (storageUnit) => {
-        //console.log(storageUnit.text.unit_number)
         this.props.deleteStorageUnit(storageUnit.data.id)
     }
 
@@ -32,9 +31,7 @@ class StorageUnit extends React.Component {
     } // - Available: {renderAvailable()}
 
     addLike = (like) =>{
-        //console.log(like)
         let newlikes = like + 1
-        //console.log(newlikes)
         this.setState({likes: newlikes}, () => this.props.likeStorageUnit(this.state))
     }
 
@@ -48,7 +45,7 @@ class StorageUnit extends React.Component {
 
     render(){
         return(
-        <div>
+        <div className="storage-unit">
             <p>Unit Number: {this.props.data.unit_number} - 
             <ButtonGroup >
                 <Button onClick={()=> this.handleDelete(this.props)}>delete</Button>
