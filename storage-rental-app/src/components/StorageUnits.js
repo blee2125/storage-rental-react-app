@@ -1,5 +1,6 @@
 import React from 'react'
 import StorageUnit from '../components/StorageUnit'
+import Button from 'react-bootstrap/Button'
 
 class StorageUnits extends React.Component{
 
@@ -25,8 +26,8 @@ class StorageUnits extends React.Component{
     render(){
         return(
             <div>
-                Index
-                <button onClick={() => this.sortAbc(this.state)}>Sort by abc</button>
+                Storage Unit Index<br></br>
+                <Button onClick={() => this.sortAbc(this.state)}>Sort by abc</Button>
                 {this.renderStorageUnits(this.props.data.storageUnits)}
 
             </div>
