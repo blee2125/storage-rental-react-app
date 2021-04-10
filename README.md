@@ -8,6 +8,8 @@ User Interface: React
 
 State Management: Redux
 
-Backend Api: Rails
+Backend Api: Ruby on Rails
+
+ -> [link to backend repo](https://github.com/blee2125/storage-rental-backend)
 
 Database: PostgreSQL
