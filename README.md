@@ -10,7 +10,7 @@ Storage Unit Manager is an app built to manage storage units and rental forms of
 
 **State Management:** Redux
 
-**Backend Api:** [Ruby on Rails](https://github.com/blee2125/storage-rental-backend)
+**Backend Api:** [Storage Rental Backend](https://github.com/blee2125/storage-rental-backend) - Ruby on Rails
 
 **Database:** PostgreSQL
 
