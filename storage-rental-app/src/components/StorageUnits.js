@@ -1,6 +1,8 @@
 import React from 'react'
 import StorageUnit from '../components/StorageUnit'
 import Button from 'react-bootstrap/Button'
+import ButtonGroup from 'react-bootstrap/ButtonGroup'
+
 
 class StorageUnits extends React.Component{
 
@@ -22,6 +24,14 @@ class StorageUnits extends React.Component{
         this.setState({unitArray: sortUnits})
     }
 
+    sortAvail = () => {
+        const {unitArray} = this.state
+        let sortUnits = unitArray.sort(function(a,b){
+            return (a.available === b.available)? 0 : a.available? -1 : 1;
+        })
+        this.setState({unitArray: sortUnits})
+    }
+
     sortedByLikes = this.props.data.storageUnits.sort(function(a,b){
         return b.likes - a.likes
     })
@@ -30,7 +40,10 @@ class StorageUnits extends React.Component{
         return(
             <div>
                 Storage Unit Index<br></br>
-                <Button onClick={() => this.sortAbc(this.state)}>Sort by abc</Button>
+                <ButtonGroup >
+                    <Button onClick={() => this.sortAbc(this.state)}>Sort by Unit</Button>
+                    <Button onClick={() => this.sortAvail(this.state)}>Sort by Available</Button>
+                </ButtonGroup>
                 {this.renderStorageUnits(this.props.data.storageUnits)}
 
             </div>
