@@ -1,7 +1,7 @@
 export const addStorageUnit = (data) => {
 
     return(dispatch) => {
-        fetch('http://localhost:3000/units',
+        fetch('https://storage-unit-manager-api.herokuapp.com/units',
         {method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(data)

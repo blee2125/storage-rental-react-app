@@ -1,6 +1,6 @@
 export const likeStorageUnit = (data) => {
     return(dispatch) => {
-        fetch(`http://localhost:3000/units/${data.id}`,
+        fetch(`https://storage-unit-manager-api.herokuapp.com/units/${data.id}`,
         {method: 'PATCH',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(data)

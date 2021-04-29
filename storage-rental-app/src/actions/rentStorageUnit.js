@@ -1,7 +1,7 @@
 export const rentStorageUnit = (data) => {
 
     return(dispatch) => {
-        fetch('http://localhost:3000/rental_forms',
+        fetch('https://storage-unit-manager-api.herokuapp.com/rental_forms',
         {method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(data)

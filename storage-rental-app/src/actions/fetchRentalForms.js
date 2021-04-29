@@ -1,6 +1,6 @@
 export function fetchRentalForms(){
     return (dispatch) => {
-        fetch('http://localhost:3000/rental_forms')
+        fetch('https://storage-unit-manager-api.herokuapp.com/rental_forms')
         .then(resp => resp.json())
         .then(data => dispatch({
             type: 'FETCH_FORMS',
